@@ -1,6 +1,6 @@
 NAME= push_swap
 
-CFILS= main.c libft_cursus/ft_atoi.c parse.c libft_cursus/ft_isdigit.c libft_cursus/ft_putstr_fd.c\
+CFILS= main.c ft_atoi.c parse.c libft_cursus/ft_isdigit.c libft_cursus/ft_putstr_fd.c\
 				libft_cursus/ft_strlen.c libft_cursus/ft_split.c
 
 

@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:08:58 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/20 17:13:08 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/22 12:48:43 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@ int main(int ac, char **av)
 
 	if (ac == 2 && !ft_parse(av[1]))
 	{
-		str.tab = ft_devis(ft_split(av[1], ' '), s);
-		for (int i = 0; str.tab[i]; i++)
-			printf("%d\n", str.tab[i]);
+		sct.tab = ft_devis(ft_split(av[1], ' '));
 	}
-	ft_putstr_fd("Error\n", 2);
-	exit(-1);
+	else if (ac >= 2 && !ft_parse_multipl(ac, av))
+	{
+		sct.tab = ft_multipl_av(ac, av);
+	}
+	else
+		printf("hello world\n");
+// 	ft_putstr_fd("Error\n", 2);
+// 	exit(-1);
 }

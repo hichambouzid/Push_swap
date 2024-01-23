@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:45:03 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/22 12:31:49 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:17:23 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int ft_strleen(char **ptr)
 	return (i);
 }
 
-int *ft_devis(char **ptr)
+int *ft_devis(char **ptr, int *len)
 {
 	t_el ctl;
 	int *tab;
 
-	ctl.len = ft_strleen(ptr);
-	tab = malloc(sizeof(int) * ctl.len);
+	*len = ft_strleen(ptr);
+	tab = malloc(sizeof(int) * (*len));
 	if (!tab)
 		return (NULL);
 	ctl.i = 0;
@@ -87,7 +87,6 @@ int *ft_multipl_av(int ac, char **av)
 	while (ctl.i < ac)
 	{
 		ctl.tab[ctl.i - 1] = ft_atoi(av[ctl.i]);
-		printf("----> %d\n", ft_atoi(av[ctl.i]));
 		ctl.i++;
 	}
 	return (ctl.tab);

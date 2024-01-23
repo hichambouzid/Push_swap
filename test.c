@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 18:10:32 by hibouzid          #+#    #+#             */
-/*   Updated: 2023/10/31 18:18:59 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/01/23 18:46:46 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/01/23 19:06:40 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_isdigit(int c)
+void ft_print_list(t_list *ptr)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	printf("p\n");
+	while(ptr)
+	{
+		printf("----> %d\n", ptr->number);
+		ptr = ptr->next;
+	}
 }

@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 19:08:58 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/23 19:26:56 by hibouzid         ###   ########.fr       */
+/*   Created: 2024/01/23 18:34:34 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/01/23 19:39:27 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int ac, char **av)
+t_list *ft_creat_stacka(int *tab, int len)
 {
-	t_el sct;
-	t_list *s;
+	t_el el;
+	t_list *rt;
+	
+	rt = NULL;
+	el.i = 0;
+	// printf("len is %d\n", len);
+	while (el.i < len)
+	{
+		ft_lst_add_back(&rt, ft_lstnew(tab[el.i]));
+		el.i++;
+	}
+	return (rt);
+}
 
-	if (ac == 2 && !ft_parse(av[1]))
+t_list *ft_creat_stackb(int len)
+{
+	int i;
+	t_list *rt;
+
+	i = 0;
+	rt = NULL;
+	while (i < len)
 	{
-		sct.tab = ft_devis(ft_split(av[1], ' '), &sct.len);
-		s = ft_creat_stacka(sct.tab, sct.len);
-		ft_print_list(s);
-		
+		ft_lst_add_back(&rt, ft_lstnew(0));
+		i++;
 	}
-	else if (ac > 2 && !ft_parse_multipl(ac, av))
-	{
-		sct.tab = ft_multipl_av(ac, av);
-		s = ft_creat_stacka(sct.tab, ac - 1);
-		ft_print_list(s);
-	}
-	else
-		printf("Error\n");
+	return (rt);
 }

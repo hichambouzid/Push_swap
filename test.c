@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:46:46 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/23 19:06:40 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:31:19 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void ft_print_list(t_list *ptr)
 {
-	printf("p\n");
 	while(ptr)
 	{
 		printf("----> %d\n", ptr->number);

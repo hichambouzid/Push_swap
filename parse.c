@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:45:03 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/23 16:17:23 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:03:18 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int *ft_devis(char **ptr, int *len)
 		tab[ctl.i] = ft_atoi(ptr[ctl.i]);
 		ctl.i++;
 	}
+	ft_free(ctl.i, ptr);
 	return (tab);	
 }
 

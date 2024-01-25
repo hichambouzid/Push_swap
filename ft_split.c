@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:05:34 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/22 15:23:44 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:04:10 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	ft_count(char const *s, char c)
 	return (count);
 }
 
-static char	**ft_free(int index, char **ptr)
+char	**ft_free(int index, char **ptr)
 {
 	while (index >= 0)
 	{

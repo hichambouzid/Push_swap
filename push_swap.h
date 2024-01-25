@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 00:38:44 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/23 19:40:04 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/25 21:09:20 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,31 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-// #include "libft_cursus/libft.h"
 
-typedef struct elemet
-{
-	int i;
-	int len;
-	int **ptr;
-	int *tab;
-	long num;
-	int sign;
-} t_el;
-
+// use a linked list as a stack
 typedef struct s_list
 {
 	int number;
 	struct s_list *next;
 } t_list;
 
+// struct for small lines in code
+typedef struct elemet
+{
+	int i;
+	int len;
+	int j;
+	int **ptr;
+	int *tab;
+	long num;
+	int sign;
+ 	struct s_list *stacka;
+	struct s_list *stackb;
+} t_el;
 #define INT_MIN -2147483648 
 #define INT_MAX 2147483647
 
+// some util fucntion needed to prace
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 int	ft_strlen(const char *s);
@@ -46,12 +50,26 @@ int ft_strleen(char **ptr);
 int	ft_atoi(char *str);
 int *ft_multipl_av(int ac, char **av);
 int	ft_isdigit(int c);
-t_list *ft_lstnew(int num);
 
+// check the params given in the argument if valid
+void ft_check_array(int *tab, int len_tab);
+char	**ft_free(int index, char **ptr);
+
+
+// creat a stack and the moves & free stack 
 t_list *ft_lst_last(t_list *lst);
 void ft_lst_add_back(t_list **ptr, t_list *s);
+void ft_swap_list(t_list **stacka);
 t_list *ft_creat_stacka(int *tab, int len);
+void ft_reverse_rotate_stack(t_list **stack);
+void ft_rotate_stack(t_list **stack);
+t_list *ft_lstnew(int num);
+void ft_free_stack(t_list **a);
+int ft_stack_sorted(t_list *ptr);
+int ft_lst_size(t_list *ptr);
+
+
+// print the stack for testing
 void ft_print_list(t_list *ptr);
-t_list *ft_creat_stackb(int len);
 
 #endif

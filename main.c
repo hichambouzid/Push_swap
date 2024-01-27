@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:08:58 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/25 21:11:33 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:29:48 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,14 @@ int main(int ac, char **av)
 	sct.stacka = ft_creat_stack(ac, av);
 	if (sct.stacka && !ft_stack_sorted(sct.stacka))
 	{
-		printf("the size of linked list : %d\n", ft_lst_size(sct.stacka));
+		if (ft_lst_size(sct.stacka) == 2)
+			ft_swap_list(&sct.stacka,  "sa\n");
+		else
+			ft_sort_list(&sct.stacka, ft_lst_size(sct.stacka));
 	}
-	return (write(1, "hello world\n", 12));
+	// ft_rotate_stack(&sct.stacka, "ra\n");
+	// ft_print_list(sct.stacka);
+	// return (write(1, "hello world\n", 12));
 	// ft_rotate_stack(&sct.stacka);
 	// ft_print_list(sct.stacka);
 	// ft_free_stack(&sct.stacka);

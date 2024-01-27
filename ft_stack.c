@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:34:34 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/25 21:09:10 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/27 16:44:14 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_list *ft_creat_stacka(int *tab, int len)
 		ft_lst_add_back(&rt, ft_lstnew(tab[el.i]));
 		el.i++;
 	}
+	free(tab);
 	return (rt);
 }
 
@@ -43,7 +44,7 @@ t_list *ft_creat_stacka(int *tab, int len)
 // 	return (rt);
 // }
 
-void ft_swap_list(t_list **stack)
+void ft_swap_list(t_list **stack, char *str)
 {
 	t_list *tmp;
 
@@ -51,9 +52,10 @@ void ft_swap_list(t_list **stack)
 	(*stack)->next = tmp->next;
 	tmp->next = *stack;
 	*stack = tmp;
+	ft_putstr_fd(str, 1);
 }
 
-void ft_reverse_rotate_stack(t_list **stack)
+void ft_reverse_rotate_stack(t_list **stack, char *str)
 {
 	t_list *tmp;
 
@@ -72,9 +74,11 @@ void ft_reverse_rotate_stack(t_list **stack)
 		}
 		tmp = tmp->next;
 	}
+	if (str)
+		ft_putstr_fd(str, 1);
 }
 
-void ft_rotate_stack(t_list **stack)
+void ft_rotate_stack(t_list **stack, char *str)
 {
 	t_list *tmp;
 	t_list *mv;
@@ -85,7 +89,9 @@ void ft_rotate_stack(t_list **stack)
 		tmp = tmp->next;
 	tmp->next = *stack;
 	*stack = mv;
-	tmp->next->next = NULL;	
+	tmp->next->next = NULL;
+	if (str)
+		ft_putstr_fd(str, 1);
 }
 
 void ft_free_stack(t_list **a)
@@ -132,3 +138,4 @@ int ft_lst_size(t_list *ptr)
 	}
 	return (i);
 }
+

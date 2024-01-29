@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:34:34 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/27 16:44:14 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:07:43 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,18 @@ t_list *ft_creat_stacka(int *tab, int len)
 
 void ft_swap_list(t_list **stack, char *str)
 {
-	t_list *tmp;
+	t_list *first;
+	t_list *second;
 
-	tmp = (*stack)->next;
-	(*stack)->next = tmp->next;
-	tmp->next = *stack;
-	*stack = tmp;
+	 if (*stack == NULL || stack == NULL)
+		return ;
+	first = *stack;
+	second = (*stack)->next;
+	first->next = second->next;
+	second->next = first;
+	*stack = second;  
 	ft_putstr_fd(str, 1);
+	// ft_print_list(*stack);
 }
 
 void ft_reverse_rotate_stack(t_list **stack, char *str)

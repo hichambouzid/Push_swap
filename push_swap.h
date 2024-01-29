@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 00:38:44 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/27 15:58:15 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:04:26 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct elemet
 	int i;
 	int len;
 	int j;
+	int min;
+	int max;
 	int **ptr;
 	int *tab;
 	long num;
@@ -52,6 +54,8 @@ int *ft_multipl_av(int ac, char **av);
 int	ft_isdigit(int c);
 int ft_min(t_list *list);
 int ft_max(t_list *list);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+
 // check the params given in the argument if valid
 void ft_check_array(int *tab, int len_tab);
 char	**ft_free(int index, char **ptr);
@@ -69,7 +73,8 @@ void ft_free_stack(t_list **a);
 int ft_stack_sorted(t_list *ptr);
 int ft_lst_size(t_list *ptr);
 void ft_sort_list(t_list **stack, int len);
-
+void ft_push_to_stack(t_list **stacka, t_list **stackb, char *str);
+t_list	*ft_sort_four(t_list **stack);
 
 // print the stack for testing
 void ft_print_list(t_list *ptr);

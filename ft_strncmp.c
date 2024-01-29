@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_util_function.c                                 :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 15:53:47 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/28 00:29:42 by hibouzid         ###   ########.fr       */
+/*   Created: 2023/11/01 12:26:17 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/01/28 01:25:47 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_max(t_list *list)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int rt;
+	size_t	i;
 
-	rt = list->number;
-	while (list)
+	i = 0;
+	while ((s1[i] || s2[i]) && (i < n))
 	{
-		if (list->number > rt)
-			rt = list->number;
-		list = list->next;
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
 	}
-	return (rt);
+	return (0);
 }
 
-int ft_min(t_list *list)
-{
-	int rt;
+// #include <stdio.h>
+// #include<string.h>
 
-	rt = list->number;
-	while (list)
-	{
-		if (list->number < rt)
-			rt = list->number;
-		list = list->next;
-	}
-	return (rt);
-}
+// int main()
+// {char *s  = 0;
+// 	//printf("----> %d\n",ft_strncmp(NULL , "mnionvie", 0));
+
+// 	printf("%d\n" ,strncmp(NULL, "hjkujkn", 0));
+// }

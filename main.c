@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:08:58 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/27 15:29:48 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/28 15:12:28 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main(int ac, char **av)
 {
 	t_el sct;
 
-	if (ac == 1 || (ac == 2 && !av[1][0]))
+	if (ac < 2)
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (0);		

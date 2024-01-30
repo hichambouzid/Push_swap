@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int ft_max(t_list *list)
+int	ft_max(t_list *list)
 {
-	int rt;
+	int	rt;
 
 	rt = list->number;
 	while (list)
@@ -26,9 +26,9 @@ int ft_max(t_list *list)
 	return (rt);
 }
 
-int ft_min(t_list *list)
+int	ft_min(t_list *list)
 {
-	int rt;
+	int	rt;
 
 	rt = list->number;
 	while (list)

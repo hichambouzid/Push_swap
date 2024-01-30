@@ -14,12 +14,11 @@
 
 int	ft_atoi(char *str)
 {
-	t_el ctl;
+	t_el	ctl;
 
 	ctl.i = 0;
 	ctl.num = 0;
 	ctl.sign = 1;
-	
 	if (str[ctl.i] == '+')
 		ctl.i++;
 	else if (str[ctl.i] == '-')

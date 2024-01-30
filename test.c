@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:46:46 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/25 17:31:19 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/30 00:53:57 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_print_list(t_list *ptr)
+void	ft_print_list(t_list *ptr)
 {
-	while(ptr)
+	while (ptr)
 	{
 		printf("----> %d\n", ptr->number);
 		ptr = ptr->next;

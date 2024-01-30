@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 19:40:48 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/24 15:05:02 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/30 00:52:50 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void ft_check_array(int *tab, int len_tab)
+void	ft_check_array(int *tab, int len_tab)
 {
-	t_el elem;
-	
+	t_el	elem;
+
 	elem.i = 0;
 	while (elem.i < len_tab)
 	{

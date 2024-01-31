@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:19:56 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/30 15:42:49 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/31 12:21:57 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,46 @@ t_list	*ft_sort_four(t_list **stack)
 	return (*stack);
 }
 
+t_list *ft_sort_five(t_list **stack)
+{
+	t_el element;
+	t_list *tmp;
+
+	element.stackb = NULL;
+	tmp = *stack;
+	element.min = ft_min(*stack);
+	element.max = ft_max(*stack);
+	while (!ft_stack_sorted(*stack) && ft_lst_size(element.stackb) != 2)
+	{
+		if (tmp->number == element.min || tmp->number == element.max)
+			ft_push_to_stack(&tmp, &element.stackb, "pb\n");
+		else if (tmp->next->number == element.min || tmp->next->number == element.max)
+			ft_swap_list(&tmp, "sa\n");
+		else if (ft_lst_last(tmp)->number == element.max || ft_lst_last(tmp)->number == element.min)
+			ft_reverse_rotate_stack(&tmp, "rra\n");
+		else
+			ft_rotate_stack(&tmp, "ra\n");
+			stack = &tmp;
+	}
+	*stack = ft_sort_tree(stack);
+	ft_push_to_stack(stack, &element.stackb, "pa\n");
+	if ((*stack)->number == element.max)
+		ft_rotate_stack(stack, "ra\n");
+	ft_push_to_stack(stack, &element.stackb, "pa\n");
+	if ((*stack)->number == element.max)
+		ft_rotate_stack(stack, "ra\n");
+	return (*stack);	
+}
+
 void	ft_sort_list(t_list **stack, int len)
 {
 	if (len <= 3)
 		ft_sort_tree(stack);
 	if (len <= 4)
 		*stack = ft_sort_four(stack);
+	if (len >= 5)
+		*stack = ft_sort_five(stack);
+		// ft_print_list(*stack);
 }
 
 void	ft_push_to_stack(t_list **stacka, t_list **stackb, char *str)

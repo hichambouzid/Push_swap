@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst_util.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:23:05 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/30 15:46:45 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/01/31 10:40:37 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ int	ft_stack_sorted(t_list *stack)
 int	ft_lst_size(t_list *ptr)
 {
 	int	i;
-
+	if (!ptr)
+		return (0);
 	i = 0;
 	while (ptr)
 	{

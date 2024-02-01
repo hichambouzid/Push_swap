@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 00:38:44 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/01 11:07:20 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/01 21:15:56 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct elemet
 {
 	int				i;
 	int				len;
+	static int		index;
 	int				j;
 	int				min;
 	int				max;
@@ -75,6 +76,9 @@ void				ft_sort_list(t_list **stack, int len);
 void				ft_push_to_stack(t_list **stacka, t_list **stackb,
 						char *str);
 t_list				*ft_sort_four(t_list **stack);
+int					*ft_sort_tab(int *tab, int len);
+int					*ft_scrap_numbers(t_list *stacka);
+
 
 // print the stack for testing
 void				ft_print_list(t_list *ptr);

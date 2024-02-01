@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:19:56 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/01 11:20:30 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:10:45 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,18 @@ t_list	*ft_sort_five(t_list **stack)
 
 void	ft_sort_list(t_list **stack, int len)
 {
+	int *tab;
 	if (len <= 3)
 		ft_sort_tree(stack);
-	if (len <= 4)
+	else if (len <= 4)
 		*stack = ft_sort_four(stack);
-	if (len >= 5)
+	else if (len <= 5)
 		*stack = ft_sort_five(stack);
+	else if (len > 5 && len < 16)
+	{
+		tab = ft_sort_tab(ft_scrap_numbers(*stack), ft_lst_size(*stack));
+			
+	}
 }
 
 void	ft_push_to_stack(t_list **stacka, t_list **stackb, char *str)

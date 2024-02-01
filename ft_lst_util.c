@@ -76,6 +76,7 @@ int	ft_stack_sorted(t_list *stack)
 int	ft_lst_size(t_list *ptr)
 {
 	int	i;
+
 	if (!ptr)
 		return (0);
 	i = 0;

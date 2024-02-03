@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:19:56 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/01 18:10:45 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:46:11 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,10 @@ void	ft_sort_list(t_list **stack, int len)
 		*stack = ft_sort_four(stack);
 	else if (len <= 5)
 		*stack = ft_sort_five(stack);
-	else if (len > 5 && len < 16)
+	else if (len > 5)
 	{
 		tab = ft_sort_tab(ft_scrap_numbers(*stack), ft_lst_size(*stack));
+		ft_sort_tree_part(stack, tab, ft_lst_size(*stack));
 			
 	}
 }
@@ -118,14 +119,15 @@ void	ft_push_to_stack(t_list **stacka, t_list **stackb, char *str)
 
 	save1 = *stacka;
 	save2 = *stackb;
-	if (!ft_strncmp(str, "pb\n", 4) && *stacka)
+	if (!ft_strncmp(str, "pb\n", 3))
 	{
+		// if (!*stackb)
 		*stacka = (*stacka)->next;
 		save1->next = *stackb;
 		*stackb = save1;
 		ft_putstr_fd(str, 1);
 	}
-	else if (!ft_strncmp(str, "pa\n", 4) && *stackb)
+	else if (!ft_strncmp(str, "pa\n", 3))
 	{
 		*stackb = (*stackb)->next;
 		save2->next = *stacka;

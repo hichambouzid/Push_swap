@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 00:38:44 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/01 21:15:56 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:34:22 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct elemet
 {
 	int				i;
 	int				len;
-	static int		index;
+	// static int		index;
 	int				j;
 	int				min;
 	int				max;
@@ -78,8 +78,9 @@ void				ft_push_to_stack(t_list **stacka, t_list **stackb,
 t_list				*ft_sort_four(t_list **stack);
 int					*ft_sort_tab(int *tab, int len);
 int					*ft_scrap_numbers(t_list *stacka);
-
-
+void				ft_sort_tree_part(t_list **stack, int *tab, int len);
+t_list				*ft_sort_tree(t_list **stack);
+void ft_find_andpush(t_list **stack, t_list **stackb);
 // print the stack for testing
 void				ft_print_list(t_list *ptr);
 

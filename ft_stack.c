@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:34:34 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/01 17:53:50 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/03 15:07:58 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_swap_list(t_list **stack, char *str)
 	t_list	*first;
 	t_list	*second;
 
-	if (*stack == NULL || stack == NULL)
+	if (*stack == NULL || stack == NULL || !(*stack)->next)
 		return ;
 	first = *stack;
 	second = (*stack)->next;
@@ -85,6 +85,9 @@ void	ft_rotate_stack(t_list **stack, char *str)
 	t_list	*tmp;
 	t_list	*mv;
 
+	if (!(*stack)->next)
+		return ;
+		
 	tmp = *stack;
 	mv = (*stack)->next;
 	while (tmp->next)

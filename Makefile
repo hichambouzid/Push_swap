@@ -5,7 +5,7 @@ CFILS= main.c ft_atoi.c parse.c ft_isdigit.c ft_putstr_fd.c\
 			ft_strncmp.c ./hard_part/sort_tab.c
 
 
-CFLAGS= -Wall -Wextra -Werror -g -fsanitize=address 
+CFLAGS= -Wall -Wextra -Werror #-g -fsanitize=address 
 
 $(NAME): $(CFILS)
 	cc $(CFLAGS) $(CFILS) -o $(NAME)

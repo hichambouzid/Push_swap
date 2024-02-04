@@ -7,17 +7,19 @@ CFILS= main.c ft_atoi.c parse.c ft_isdigit.c ft_putstr_fd.c\
 
 CFLAGS= -Wall -Wextra -Werror # -fsanitize=address -g
 
-$(NAME): $(CFILS)
-	cc $(CFLAGS) $(CFILS) -o $(NAME)
+OBJS=$(CFILS:.c=.o)
+
+$(NAME): $(OBJS)
+	cc $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
 
 clean:
-	rm -rf $(NAME)
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
 
 
-re:	clean all
+re:	fclean all

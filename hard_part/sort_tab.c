@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   sort_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:54:18 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/03 17:05:05 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/04 12:28:36 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../push_swap.h"
 
-int *ft_scrap_numbers(t_list *stacka)
+int	*ft_scrap_numbers(t_list *stacka)
 {
-	int len;
-	int *tab;
-	int i;
+	int	len;
+	int	*tab;
+	int	i;
 
 	i = 0;
 	len = ft_lst_size(stacka);
@@ -32,11 +32,11 @@ int *ft_scrap_numbers(t_list *stacka)
 	return (tab);
 }
 
-int *ft_sort_tab(int *tab, int len)
+int	*ft_sort_tab(int *tab, int len)
 {
-	int i;
-	int j;
-	int tmp;
+	int	i;
+	int	j;
+	int	tmp;
 
 	i = 0;
 	while (i < len)
@@ -57,7 +57,7 @@ int *ft_sort_tab(int *tab, int len)
 	return (tab);
 }
 
-int ft_check_range(int *tab, int start, int end, int number)
+int	ft_check_range(int *tab, int start, int end, int number)
 {
 	while (start < end)
 	{
@@ -68,7 +68,7 @@ int ft_check_range(int *tab, int start, int end, int number)
 	return (0);
 }
 
-int found_in_stack(t_list *stack, int start, int end, int *tab)
+int	found_in_stack(t_list *stack, int start, int end, int *tab)
 {
 	while (stack)
 	{
@@ -80,7 +80,7 @@ int found_in_stack(t_list *stack, int start, int end, int *tab)
 	return (1);
 }
 
-int get_range(int len)
+int	get_range(int len)
 {
 	if (len > 5 && len <= 16)
 		return (3);
@@ -92,45 +92,46 @@ int get_range(int len)
 		return (45);
 }
 
-void ft_sort_tree_part(t_list **stack, int *tab, int len)
+void	ft_sort_tree_part(t_list **stack, int *tab, int len)
 {
-	t_el element;
+	t_el	element;
 
 	element.stackb = NULL;
 	element.i = 0;
-	// printf("len %d\n", len);
 	element.j = get_range(len);
 	element.stacka = *stack;
 	while (*stack && element.i < len)
 	{
 		if (element.stacka->number < tab[element.i])
-			{
-				ft_push_to_stack(&element.stacka, &element.stackb, "pb\n");
-				ft_rotate_stack(&element.stackb, "rb\n");
-				if (element.j < len)
-				element.j++;
-			 element.i++;
-			}
-		else if (ft_check_range(tab, element.i, element.j, element.stacka->number) == 1)
 		{
-				ft_push_to_stack(&element.stacka, &element.stackb, "pb\n");
-			if (ft_lst_size(element.stackb) != 1 && element.stackb->number < element.stackb->next->number)
+			ft_push_to_stack(&element.stacka, &element.stackb, "pb\n");
+			ft_rotate_stack(&element.stackb, "rb\n");
+			if (element.j < len)
+				element.j++;
+			element.i++;
+		}
+		else if (ft_check_range(tab, element.i, element.j,
+				element.stacka->number) == 1)
+		{
+			ft_push_to_stack(&element.stacka, &element.stackb, "pb\n");
+			if (ft_lst_size(element.stackb) != 1
+				&& element.stackb->number < element.stackb->next->number)
 				ft_swap_list(&element.stackb, "sb\n");
 			if (element.j < len)
 				element.j++;
 			element.i++;
 		}
-		  else 
-		  	ft_rotate_stack(&element.stacka, "ra\n");
+		else
+			ft_rotate_stack(&element.stacka, "ra\n");
 		stack = &element.stacka;
 	}
 	stack = &element.stacka;
 	ft_find_andpush(&element.stacka, &element.stackb);
 }
 
-int ft_index(t_list *stack, int num)
+int	ft_index(t_list *stack, int num)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack)
@@ -143,24 +144,17 @@ int ft_index(t_list *stack, int num)
 	return (-1);
 }
 
-void ft_find_andpush(t_list **stack, t_list **stackb)
+void	ft_find_andpush(t_list **stack, t_list **stackb)
 {
 	while (*stackb)
 	{
 		if (ft_max(*stackb) == (*stackb)->number)
-		{
 			ft_push_to_stack(stack, stackb, "pa\n");
-		// printf("im here\n");
-		}
 		else if ((*stackb)->next && ft_max(*stackb) == (*stackb)->next->number)
 			ft_swap_list(stackb, "sb\n");
 		else if (ft_index(*stackb, ft_max(*stackb)) < ft_lst_size(*stackb) / 2)
-	{
 			ft_rotate_stack(stackb, "rb\n");
-	}
 		else
 			ft_reverse_rotate_stack(stackb, "rrb\n");
-		
 	}
-	// ft_print_list(*stack);	
 }

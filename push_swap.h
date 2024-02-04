@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 00:38:44 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/03 16:34:22 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/04 18:11:18 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,13 @@ int					*ft_sort_tab(int *tab, int len);
 int					*ft_scrap_numbers(t_list *stacka);
 void				ft_sort_tree_part(t_list **stack, int *tab, int len);
 t_list				*ft_sort_tree(t_list **stack);
-void ft_find_andpush(t_list **stack, t_list **stackb);
+void				ft_find_andpush(t_list **stack, t_list **stackb);
+int					ft_index(t_list *stack, int num);
+int					get_range(int len);
+int					found_in_stack(t_list *stack, int start, int end, int *tab);
+int					ft_check_range(int *tab, int start, int end, int number);
+int					get_range(int len);
+
 // print the stack for testing
 void				ft_print_list(t_list *ptr);
 

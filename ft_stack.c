@@ -87,7 +87,6 @@ void	ft_rotate_stack(t_list **stack, char *str)
 
 	if (!(*stack)->next)
 		return ;
-		
 	tmp = *stack;
 	mv = (*stack)->next;
 	while (tmp->next)

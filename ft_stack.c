@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:34:34 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/03 15:07:58 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/05 11:23:53 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	ft_swap_list(t_list **stack, char *str)
 	first->next = second->next;
 	second->next = first;
 	*stack = second;
+	if (str)
 	ft_putstr_fd(str, 1);
 }
 

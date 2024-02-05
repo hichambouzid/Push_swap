@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 17:46:21 by hibouzid          #+#    #+#             */
-/*   Updated: 2023/11/25 11:20:48 by hibouzid         ###   ########.fr       */
+/*   Created: 2023/11/22 14:51:10 by hibouzid          #+#    #+#             */
+/*   Updated: 2024/02/05 13:32:01 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
-
+#include "get_next_line.h"
+#include "push_swap.h"
 char	*get_read(char *ptr, int fd)
 {
 	int		i;
@@ -61,7 +61,7 @@ char	*ft_cut(char *ptr)
 	return (str);
 }
 
-char	*ft_free(char *str, char *ptr)
+char	*ft_freee(char *str, char *ptr)
 {
 	if (*str == 0)
 	{
@@ -98,18 +98,18 @@ char	*ft_line(char *ptr)
 	if (ptr[i] != 0)
 		str[i++] = '\n';
 	str[i] = 0;
-	return (ft_free(str, ptr));
+	return (ft_freee(str, ptr));
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*ptr[1024];
+	static char	*ptr;
 	char		*str;
 
 	if (fd == -1 || BUFFER_SIZE <= 0)
 		return (NULL);
-	ptr[fd] = get_read(ptr[fd], fd);
-	str = ft_line(ptr[fd]);
-	ptr[fd] = ft_cut(ptr[fd]);
+	ptr = get_read(ptr, fd);
+	str = ft_line(ptr);
+	ptr = ft_cut(ptr);
 	return (str);
 }

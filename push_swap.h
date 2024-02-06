@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 00:38:44 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/05 13:14:41 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:56:00 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ typedef struct elemet
 # define INT_MAX 2147483647
 
 // some util fucntions
-void				ft_putstr_fd(char *s, int fd);
+int				ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *s, char c);
-int					ft_strlen(const char *s);
+int					ft_strlen(char *s);
 int					ft_parse(char *av);
 int					*ft_devis(char **ptr, int *len);
 int					ft_parse_multipl(int ac, char **av);

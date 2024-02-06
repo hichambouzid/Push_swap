@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:34:34 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/05 11:23:53 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:54:06 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,9 @@ void	ft_rotate_stack(t_list **stack, char *str)
 void	ft_free_stack(t_list **a)
 {
 	t_list	*tmp;
-
+	
+	if (!a || !*a)
+		return ;
 	tmp = *a;
 	while ((*a))
 	{

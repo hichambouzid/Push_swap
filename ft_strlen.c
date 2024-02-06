@@ -6,13 +6,13 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 09:33:09 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/01/22 15:23:54 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/05 14:50:06 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_strlen(const char *s)
+int	ft_strlen(char *s)
 {
 	int	i;
 

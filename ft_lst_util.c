@@ -58,7 +58,7 @@ void	ft_lst_add_back(t_list **ptr, t_list *s)
 int	ft_stack_sorted(t_list *stack)
 {
 	t_list	*tmp;
-	
+
 	if (!stack)
 		return (0);
 	while (stack)

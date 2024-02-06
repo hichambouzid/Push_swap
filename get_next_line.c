@@ -12,6 +12,7 @@
 
 #include "get_next_line.h"
 #include "push_swap.h"
+
 char	*get_read(char *ptr, int fd)
 {
 	int		i;

@@ -33,6 +33,6 @@ void	ft_push_to_stack(t_list **stacka, t_list **stackb, char *str)
 		save2->next = *stacka;
 		*stacka = save2;
 		if (!ft_strncmp(str, "pa\n", 3))
-		ft_putstr_fd(str, 1);
+			ft_putstr_fd(str, 1);
 	}
 }

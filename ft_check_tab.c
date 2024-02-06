@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 19:40:48 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/05 15:40:54 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:09:52 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_check_array(int *tab, int len_tab)
 t_list	*ft_creat_stack(int ac, char **av)
 {
 	t_el	sct;
-	
+
 	if (ac == 2 && !ft_parse(av[1]))
 	{
 		sct.tab = ft_devis(ft_split(av[1], ' '), &sct.len);

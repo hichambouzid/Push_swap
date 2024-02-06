@@ -56,7 +56,7 @@ void	ft_swap_list(t_list **stack, char *str)
 	second->next = first;
 	*stack = second;
 	if (str)
-	ft_putstr_fd(str, 1);
+		ft_putstr_fd(str, 1);
 }
 
 void	ft_reverse_rotate_stack(t_list **stack, char *str)
@@ -102,7 +102,7 @@ void	ft_rotate_stack(t_list **stack, char *str)
 void	ft_free_stack(t_list **a)
 {
 	t_list	*tmp;
-	
+
 	if (!a || !*a)
 		return ;
 	tmp = *a;

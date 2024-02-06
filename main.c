@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:08:58 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/05 15:23:20 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:13:59 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ int	main(int ac, char **av)
 		else
 			ft_sort_list(&sct.stacka, ft_lst_size(sct.stacka));
 	}
+	system("leaks push_swap");
 }

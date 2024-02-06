@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 19:40:48 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/06 14:09:52 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/06 22:58:41 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,23 @@ void	ft_check_array(int *tab, int len_tab)
 t_list	*ft_creat_stack(int ac, char **av)
 {
 	t_el	sct;
+	char *str;
 
 	if (ac == 2 && !ft_parse(av[1]))
 	{
 		sct.tab = ft_devis(ft_split(av[1], ' '), &sct.len);
 		ft_check_array(sct.tab, sct.len);
 		sct.stacka = ft_creat_stacka(sct.tab, sct.len);
+		// free(sct.tab);
 	}
 	else if (ac > 2 && !ft_parse_multipl(ac, av))
 	{
-		sct.tab = ft_multipl_av(ac, av);
-		ft_check_array(sct.tab, ac - 1);
-		sct.stacka = ft_creat_stacka(sct.tab, ac - 1);
+		str = ft_all_av(ac, av);
+		sct.tab = ft_devis(ft_split(str, ' '), &sct.len);
+		ft_check_array(sct.tab, sct.len);
+		sct.stacka = ft_creat_stacka(sct.tab, sct.len);
+		free(str);
+		free(sct.tab);
 	}
 	else
 	{

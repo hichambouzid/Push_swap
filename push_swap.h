@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 00:38:44 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/06 13:56:00 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/06 21:48:04 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int					ft_isdigit(int c);
 int					ft_min(t_list *list);
 int					ft_max(t_list *list);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-
+char				*ft_strjoin(char *s1, char *s2);
+char				*ft_all_av(int ac, char **av);
 // check the params given in the argument if valid
 void				ft_check_array(int *tab, int len_tab);
 char				**ft_free(int index, char **ptr);

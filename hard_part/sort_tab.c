@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:54:18 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/04 20:32:28 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/06 22:46:43 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	ft_sort_tree_part(t_list **stack, int *tab, int len)
 			ft_rotate_stack(&element.stacka, "ra\n");
 	}
 	ft_find_andpush(&element.stacka, &element.stackb);
+	// ft_free_stack(&element.stacka);
+	// ft_free_stack(&element.stackb);
 	free(tab);
 }
 

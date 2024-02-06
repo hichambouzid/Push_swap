@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:19:56 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/04 18:04:27 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/06 22:51:38 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,7 @@ void	ft_sort_list(t_list **stack, int len)
 	{
 		tab = ft_sort_tab(ft_scrap_numbers(*stack), ft_lst_size(*stack));
 		ft_sort_tree_part(stack, tab, ft_lst_size(*stack));
+		free(tab);
 	}
+	ft_free_stack(stack);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:34:34 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/07 14:09:26 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:22:50 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_list	*ft_creat_stacka(int *tab, int len)
 		ft_lst_add_back(&rt, ft_lstnew(tab[el.i]));
 		el.i++;
 	}
-	ft_print_list(rt);
 	free(tab);
 	return (rt);
 }

@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:23:05 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/07 03:10:19 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:18:18 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	ft_lst_add_back(t_list **ptr, t_list *s)
 {
 	t_list	*save;
 
-	printf("this time\n");
 	if (!*ptr && s)
 	{
 		*ptr = s;

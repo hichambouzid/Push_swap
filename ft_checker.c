@@ -3,15 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 10:39:13 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/07 15:00:23 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:29:59 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include "push_swap.h"
+
+
+int ft_is_instruction(char *str)
+{
+	if (!ft_strncmp(str, "ss\n", ft_strlen(str)) || !ft_strncmp(str, "rr\n", ft_strlen(str)) ||
+		!ft_strncmp(str, "rra\n", ft_strlen(str)) ||
+		!ft_strncmp(str, "ra\n", ft_strlen(str)) || !ft_strncmp(str, "rb\n", ft_strlen(str)) ||
+		!ft_strncmp(str, "sa\n", ft_strlen(str)) || !ft_strncmp(str, "sb\n", ft_strlen(str)) 
+		|| !ft_strncmp(str, "pb\n", ft_strlen(str)) || !ft_strncmp(str, "pa\n", ft_strlen(str)) || 
+		!ft_strncmp(str, "rrb\n", ft_strlen(str)
+		|| !ft_strncmp(str, "rrr\n", ft_strlen(str))))
+		return (1);
+	return (0);
+}
 
 void	ft_multipl_function(t_list **stacka, t_list **stackb, char *str)
 {
@@ -52,12 +66,8 @@ int	get_the_function(t_list **stacka, t_list **stackb, char *str)
 		|| !ft_strncmp("rrr\n", "rrr\n", 4) || !ft_strncmp(str, "pb\n", 3)
 		|| !ft_strncmp(str, "pa\n", 3))
 		ft_multipl_function(stacka, stackb, str);
-	else
-	{
-		printf("i'm here\n");
-		return (0);
-	}
-	return (1);
+	
+	return (ft_is_instruction(str));
 }
 
 void	ft_free_tow(t_list **stacka, t_list **stackb)
@@ -80,7 +90,7 @@ int	main(int ac, char **av)
 		str = get_next_line(0);
 		if (!str)
 			break ;
-		if (get_the_function(&sct.stacka, &sct.stackb, str))
+		if (get_the_function(&sct.stacka, &sct.stackb, str) == 0)
 		{
 			ft_free_tow(&sct.stacka, &sct.stackb);
 			return (ft_putstr_fd("Error\n", 2));

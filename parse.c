@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:45:03 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/06 22:33:31 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/07 02:42:02 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ int	*ft_devis(char **ptr, int *len)
 	int		*tab;
 
 	*len = ft_strleen(ptr);
+	printf("%d\n", *len);
 	tab = malloc(sizeof(int) * (*len));
 	if (!tab)
 		return (NULL);
+	printf("----?%lu\n", sizeof(int) * (*len));
 	ctl.i = 0;
 	while (ptr[ctl.i])
 	{

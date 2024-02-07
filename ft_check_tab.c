@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 19:40:48 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/06 22:58:41 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/07 03:23:35 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,23 @@ t_list	*ft_creat_stack(int ac, char **av)
 		ft_check_array(sct.tab, sct.len);
 		sct.stacka = ft_creat_stacka(sct.tab, sct.len);
 		// free(sct.tab);
+	return (sct.stacka);
+
 	}
 	else if (ac > 2 && !ft_parse_multipl(ac, av))
 	{
 		str = ft_all_av(ac, av);
 		sct.tab = ft_devis(ft_split(str, ' '), &sct.len);
 		ft_check_array(sct.tab, sct.len);
+		// printf("%p\n", &sct.stacka);
 		sct.stacka = ft_creat_stacka(sct.tab, sct.len);
 		free(str);
-		free(sct.tab);
+		// free(sct.tab);
+	return (sct.stacka);
 	}
 	else
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (NULL);
 	}
-	return (sct.stacka);
 }

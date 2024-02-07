@@ -6,7 +6,7 @@
 /*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:19:56 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/06 22:51:38 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/07 03:16:01 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_list	*ft_sort_tree(t_list **stack)
 		else
 			ft_reverse_rotate_stack(&tmp, "rra\n");
 	}
+	ft_free_stack(&tmp);
 	return (*stack);
 }
 
@@ -52,10 +53,12 @@ t_list	*ft_sort_four(t_list **stack)
 			ft_reverse_rotate_stack(&tmp, "rra\n");
 		stack = &tmp;
 	}
-	*stack = ft_sort_tree(&tmp);
+	*stack = ft_sort_tree(stack);
 	ft_push_to_stack(stack, &element.stackb, "pa\n");
 	if ((*stack)->number == element.max)
 		ft_rotate_stack(stack, "ra\n");
+	ft_free_stack(&tmp);
+	ft_free_stack(&element.stackb);
 	return (*stack);
 }
 
@@ -109,7 +112,7 @@ void	ft_sort_list(t_list **stack, int len)
 	{
 		tab = ft_sort_tab(ft_scrap_numbers(*stack), ft_lst_size(*stack));
 		ft_sort_tree_part(stack, tab, ft_lst_size(*stack));
-		free(tab);
+		// free(tab);
 	}
-	ft_free_stack(stack);
+	// ft_free_stack(stack);
 }

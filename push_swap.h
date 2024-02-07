@@ -43,7 +43,7 @@ typedef struct elemet
 # define INT_MAX 2147483647
 
 // some util fucntions
-int				ft_putstr_fd(char *s, int fd);
+int					ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *s, char c);
 int					ft_strlen(char *s);
 int					ft_parse(char *av);

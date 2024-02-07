@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:08:58 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/07 02:50:24 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/07 14:08:10 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,13 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	sct.stacka = ft_creat_stack(ac, av);
-	// ft_print_list(sct.stacka);
 	if (sct.stacka && !ft_stack_sorted(sct.stacka))
 	{
 		printf("%p\n", &sct.stacka);
 		if (ft_lst_size(sct.stacka) == 2)
-		{
 			ft_swap_list(&sct.stacka, "sa\n");
-			// ft_free_stack(&sct.stacka);
-		}
 		else
 			ft_sort_list(&sct.stacka, ft_lst_size(sct.stacka));
 	}
-	// ft_free_stack(&sct.stacka);
 	system("leaks push_swap");
 }

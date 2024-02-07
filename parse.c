@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hibouzid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:45:03 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/07 02:42:02 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/07 14:07:44 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_parse(char *str)
 		return (-1);
 	while (str[i])
 	{
-		if ((str[i] == '-' || str[i] == '+') && (str[i - 1] != '-' && str[i - 1] != '+') && ft_isdigit(str[i + 1]))
+		if ((str[i] == '-' || str[i] == '+') && (str[i - 1] != '-' && str[i
+					- 1] != '+') && ft_isdigit(str[i + 1]))
 			i++;
 		else if (str[i] == ' ' || str[i] == '\t' || ft_isdigit(str[i]))
 			i++;
@@ -47,11 +48,9 @@ int	*ft_devis(char **ptr, int *len)
 	int		*tab;
 
 	*len = ft_strleen(ptr);
-	printf("%d\n", *len);
 	tab = malloc(sizeof(int) * (*len));
 	if (!tab)
 		return (NULL);
-	printf("----?%lu\n", sizeof(int) * (*len));
 	ctl.i = 0;
 	while (ptr[ctl.i])
 	{

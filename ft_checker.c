@@ -6,7 +6,7 @@
 /*   By: hibouzid <hibouzid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 10:39:13 by hibouzid          #+#    #+#             */
-/*   Updated: 2024/02/06 14:16:51 by hibouzid         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:00:23 by hibouzid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ int	get_the_function(t_list **stacka, t_list **stackb, char *str)
 		|| !ft_strncmp(str, "pa\n", 3))
 		ft_multipl_function(stacka, stackb, str);
 	else
+	{
+		printf("i'm here\n");
 		return (0);
+	}
 	return (1);
 }
 
@@ -77,7 +80,7 @@ int	main(int ac, char **av)
 		str = get_next_line(0);
 		if (!str)
 			break ;
-		if (!get_the_function(&sct.stacka, &sct.stackb, str))
+		if (get_the_function(&sct.stacka, &sct.stackb, str))
 		{
 			ft_free_tow(&sct.stacka, &sct.stackb);
 			return (ft_putstr_fd("Error\n", 2));

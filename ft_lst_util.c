@@ -36,8 +36,8 @@ t_list	*ft_lst_last(t_list *lst)
 void	ft_lst_add_back(t_list **ptr, t_list *s)
 {
 	t_list	*save;
-	printf("this time\n");
 
+	printf("this time\n");
 	if (!*ptr && s)
 	{
 		*ptr = s;
